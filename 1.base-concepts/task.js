@@ -1,3 +1,4 @@
+use strict
 function solveEquation(a, b, c) {
   let arr;
 // program to solve quadratic equation

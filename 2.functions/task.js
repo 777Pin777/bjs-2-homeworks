@@ -36,6 +36,6 @@ function worker2(arr) {
     if (min >= element ) {min = element};
     if (max <= element ) {max = element};
   });
-  d = max-min;
-  return Math.abs(d);
+ }
+return Math.abs(max - min);
 }

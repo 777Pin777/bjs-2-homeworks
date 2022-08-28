@@ -44,4 +44,4 @@ function worker2(arr) {
  }
 return Math.abs(max - min);
 }
-}
+

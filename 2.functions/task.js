@@ -35,13 +35,15 @@ function makeWork(arrOfArr, func) {
 
 // Задание 3
 function worker2(arr) {
-  let min, max, d;
-  min = max = d = arr[0];
-  arr.forEach(element => {
-    if (min >= element) { min = element };
-    if (max <= element) { max = element };
-  });
-}
-{
+  let min = Infinity;
+  let max = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
   return Math.abs(max - min);
 }

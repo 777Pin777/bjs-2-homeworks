@@ -14,17 +14,22 @@ function getArrayParams(arr) {
 
 // Задание 2
 function worker(arr) {
-  let sum =0;
-  arr.forEach(element => {sum += element});
+  let sum;
+  sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
   return sum;
 }
 
 function makeWork(arrOfArr, func) {
-  let max =0;
-  arrOfArr.forEach(element => {
-    let tmp = func(element);
-    if (max <= tmp ) {max = tmp};
-  });
+  let max = -Infinity;
+  for (let i = 0; i < arrOfArr.length; i++) {
+    let f = func(arrOfArr[i]);
+    if (f > max) {
+      max = f;
+    }
+  }
   return max;
 }
 

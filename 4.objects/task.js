@@ -22,7 +22,7 @@ Student.prototype.addMark = function (mark) {
   }
 };
 
-Student.prototype.addMarks = function ( ...args) {
+Student.prototype.addMarks = function (...args) {
   if (this.marks === undefined) {
     this.marks = [];
     args.map(el => this.marks.push(el));
@@ -32,7 +32,7 @@ Student.prototype.addMarks = function ( ...args) {
 };
 
 Student.prototype.getAverage = function () {
-  let sum = this.marks.reduce((sum, current) => sum + current)  
+  let sum = this.marks.reduce((sum, current) => sum + current)
   this.mediumAriphetic = sum / this.marks.length // для округления в не рамок задания Number((sum / this.marks.length).toFixed(2))
   return this.mediumAriphetic
 };
@@ -47,13 +47,13 @@ Student.prototype.exclude = function (reason) {
 
 misha.addMark(5);
 misha.addMark(4);
-misha.addMarks(4,4,3,5,4,3,4);
+misha.addMarks(4, 4, 3, 5, 4, 3, 4);
 misha.getAverage();
 misha.exclude("балбес");
 
 petya.addMark(2);
 petya.addMark(3);
-petya.addMarks(2,3,2,2,2,3,2);
+petya.addMarks(2, 3, 2, 2, 2, 3, 2);
 petya.getAverage();
 petya.exclude("плохая успеваемость");
 

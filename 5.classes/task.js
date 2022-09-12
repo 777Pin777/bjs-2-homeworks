@@ -1,3 +1,5 @@
+//                                  Задание №1
+
 class PrintEditionItem {
     constructor(name, releaseDate, pagesCount) {
         this.name = name;
@@ -35,3 +37,34 @@ console.log(sherlock.releaseDate); //2019
 console.log(sherlock.state); //100
 sherlock.fix();
 console.log(sherlock.state); //100
+
+//                                   Задание №2
+
+class Library {
+  constructor(name) { 
+    this.name = name
+    this.books = []
+  } 
+  addBook(object) { 
+    if(object.state > 30)
+    this.books.push(object)       
+  }
+  findBookBy(type, value) {
+    let book = this.books.find(el => el[type] == value)  
+    if(book == undefined) return null                  
+    else return book      
+  }
+  giveBookByName(bookName) {
+    let book = this.books.splice(this.books.findIndex(el => el.name == bookName),1) 
+    if(book[0] == undefined) return null               
+    else return book[0]
+  }
+}
+    
+let library = new Library("Библиотека имени Ленина")
+
+library.addBook(fantasticBook)  
+library.addBook(novelBook)
+library.findBookBy("name","Пикник на обочине")
+library.giveBookByName("Машина времен")
+console.log(library)
